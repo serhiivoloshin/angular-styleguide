@@ -1,22 +1,10 @@
-# Angular 1.x styleguide (ES2015)
+# Angular 1.4.x styleguide (ES2015)
 
-### Architecture, file structure, components, one-way dataflow and best practices
+### Architecture, file structure, directives as components, one-way data binding
 
----
+This architecture and styleguide has been written for ES2015 and AngularJS 1.4.X for smooth upgrading application to Angular 1.5+ component-based structure. This guide reveals approaches for implementation with AngularJS 1.4.X such features as: component-based architecture, services as data store, one-way data binding, statefull and stateless directives.
 
-> Want an example structure as reference? Check out my [component based architecture 1.5 app](https://github.com/toddmotto/angular-1-5-components-app).
-
----
-
-*A sensible styleguide for teams by [@toddmotto](//twitter.com/toddmotto)*
-
-This architecture and styleguide has been rewritten from the ground up for ES2015, the changes in Angular 1.5+ for future-upgrading your application to Angular 2. This guide includes new best practices for one-way dataflow, event delegation, component architecture and component routing.
-
-You can find the old styleguide [here](https://github.com/toddmotto/angular-styleguide/tree/angular-old-es5), and the reasoning behind the new one [here](https://toddmotto.com/rewriting-angular-styleguide-angular-2).
-
-> Join the Ultimate AngularJS learning experience to fully master beginner and advanced Angular features to build real-world apps that are fast, and scale.
-
-<a href="https://courses.toddmotto.com" target="_blank"><img src="https://toddmotto.com/img/ua.png"></a>
+You can find styleguide which was used as basis for this one [here](https://github.com/toddmotto/angular-styleguide).
 
 ## Table of Contents
 
@@ -43,11 +31,8 @@ You can find the old styleguide [here](https://github.com/toddmotto/angular-styl
   1. [Services](#services)
     1. [Theory](#service-theory)
     1. [Classes for Service](#classes-for-service)
-  1. [ES2015 and Tooling](#es2015-and-tooling)
-  1. [State management](#state-management)
+  1. [Proposed Enhancements](#proposed-enhancements)
   1. [Resources](#resources)
-  1. [Documentation](#documentation)
-  1. [Contributing](#contributing)
 
 # Modular architecture
 
@@ -726,72 +711,22 @@ export default todo;
 
 **[Back to top](#table-of-contents)**
 
-# ES2015 and Tooling
+# Proposed Enhancements 
 
-##### ES2015
-
-* Use [Babel](https://babeljs.io/) to compile your ES2015+ code and any polyfills
-* Consider using [TypeScript](http://www.typescriptlang.org/) to make way for any Angular 2 upgrades
-
-##### Tooling
-* Use `ui-router` [latest alpha](https://github.com/angular-ui/ui-router) (see the Readme) if you want to support component-routing
-  * Otherwise you're stuck with `template: '<component>'` and no `bindings`/resolve mapping
-* Consider preloading templates into `$templateCache` with `angular-templates`
-  * [Gulp version](https://www.npmjs.com/package/gulp-angular-templatecache)
-  * [Grunt version](https://www.npmjs.com/package/grunt-angular-templates)
-* Consider using [Webpack](https://webpack.github.io/) for compiling your ES2015 code
-* Use [ngAnnotate](https://github.com/olov/ng-annotate) to automatically annotate `$inject` properties
-* How to use [ngAnnotate with ES6](https://www.timroes.de/2015/07/29/using-ecmascript-6-es6-with-angularjs-1-x/#ng-annotate)
-
-**[Back to top](#table-of-contents)**
-
-# State management
-
-Consider using Redux with Angular 1.5 for data management.
-
-* [Angular Redux](https://github.com/angular-redux/ng-redux)
+* Consider upgrade to AngularJS 1.5+ as soon as possible.
+  * [Migrating from 1.4 to 1.5](https://docs.angularjs.org/guide/migration#migrating-from-1-4-to-1-5)
 
 **[Back to top](#table-of-contents)**
 
 # Resources
 
-* [Understanding the .component() method](https://toddmotto.com/exploring-the-angular-1-5-component-method/)
-* [Using "require" with $onInit](https://toddmotto.com/on-init-require-object-syntax-angular-component/)
-* [Understanding all the lifecycle hooks, $onInit, $onChanges, $postLink, $onDestroy](https://toddmotto.com/angular-1-5-lifecycle-hooks)
-* [Using "resolve" in routes](https://toddmotto.com/resolve-promises-in-angular-routes/)
-* [Redux and Angular state management](http://blog.rangle.io/managing-state-redux-angular/)
-* [Sample Application from Community](https://github.com/chihab/angular-styleguide-sample)
+* [Angular 1.5+ styleguide (ES2015)](https://github.com/toddmotto/angular-styleguide)
+* [Understanding Components (AngularJS Documentation)](https://docs.angularjs.org/guide/component)
+* [Refactoring Angular Apps to Component Style](http://teropa.info/blog/2015/10/18/refactoring-angular-apps-to-components.html)
+* [Using Angular 2 Patterns in Angular 1.x Apps](https://www.angular2patterns.com/)
+* [Component-Based AngularJS Directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives)
+* [The Top 10 Mistakes AngularJS Developers Make](https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make)
+* [Stateless Angular components](https://toddmotto.com/stateless-angular-components/)
+* [One-way binding in AngularJS](http://blog.ninja-squad.com/2016/04/12/ng1-one-way-binding/)
 
 **[Back to top](#table-of-contents)**
-
-# Documentation
-For anything else, including API reference, check the [Angular documentation](//docs.angularjs.org/api).
-
-# Contributing
-
-Open an issue first to discuss potential changes/additions. Please don't open issues for questions.
-
-## License
-
-#### (The MIT License)
-
-Copyright (c) 2016 Todd Motto
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
